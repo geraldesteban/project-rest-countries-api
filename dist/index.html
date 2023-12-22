@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REST Countries API</title>
+  <link rel="shortcut icon" href="/tailwindcss.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="output.css" />
+  <script src="https://kit.fontawesome.com/ad2580ca3d.js" crossorigin="anonymous"></script>
+  <script defer src="script.js"></script>
+</head>
+
+<body class="bg-slate-100">
+  <!-- Navigation Bar -->
+  <nav class="navBar bg-white shadow-md flex justify-between">
+    <h2 class="navBar-title text-xl font-bold ml-20 my-5">
+      Where in the world?
+    </h2>
+    <button class="navbar-btn mr-20 my-5 hover:bg-gray-100 px-3">
+      ☽ Dark Mode
+    </button>
+  </nav>
+  <!-- Search Country or Filter by Region -->
+  <div class="search-filter flex justify-between py-10 bg-red-600">
+    <div class="search ml-20 relative">
+      <i class="fa-solid fa-magnifying-glass absolute mt-3 ml-3"></i>
+      <input class="search-country outline-none w-96 h-11 pl-10 shadow-md rounded-md" type="search" name="country"
+        id="country-search" placeholder="Search for a country..." />
+    </div>
+    <div class="filter mr-20">
+      <div class="filter-region">
+        <h2 class="filter-title bg-white text-sm p-3 px-10 cursor-pointer rounded-md">
+          Filter by Region
+        </h2>
+        <div class="hidden">
+          <i class="fa-solid fa-chevron-up"></i>
+          <i class="fa-solid fa-angle-down"></i>
+        </div>
+      </div>
+      <div class="filter-options mt-5 hidden">
+        <h2 class="filter-lists bg-white p-3 px-10">All</h2>
+        <h2 class="filter-lists bg-white p-3 px-10">Africa</h2>
+        <h2 class="filter-lists bg-white p-3 px-10">America</h2>
+        <h2 class="filter-lists bg-white p-3 px-10">Europe</h2>
+        <h2 class="filter-lists bg-white p-3 px-10">Oceania</h2>
+      </div>
+    </div>
+  </div>
+  <!-- Countries -->
+  <div class="country-card flex gap-20 justify-center flex-wrap">
+  </div>
+</body>
+
+</html>

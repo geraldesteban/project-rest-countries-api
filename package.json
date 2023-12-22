@@ -1,0 +1,14 @@
+{
+  "name": "rest-countries-api",
+  "version": "1.0.0",
+  "description": "Project Rest Countries using REST Countries API",
+  "main": "index.js",
+  "scripts": {
+    "start": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "author": "Gerald Esteban",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
