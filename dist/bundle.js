@@ -34,8 +34,13 @@ export {
   oceania,
 };
 
-("use strict");
-import { searchInput, countriesContainer } from "./script.js";
+"use strict";
+import {
+  searchInput,
+  countriesContainer,
+  regions,
+  regionLists,
+} from "./script.js";
 import { getCountryData } from "./getCountryData.js";
 
 // Search countries
@@ -48,7 +53,18 @@ searchInput.addEventListener("input", () => {
   }
 });
 
-("use strict");
+// Remove underline and displayed countries
+searchInput.addEventListener("click", () => {
+  countriesContainer.style.opacity = "0";
+
+  regions.forEach(r => {
+    document
+      .querySelector(`#${r}`)
+      .classList.remove("underline", "underline-offset-8");
+  });
+});
+
+"use strict";
 import { regions, regionLists, filter } from "./script.js";
 import { getCountryData } from "./getCountryData.js";
 
@@ -73,7 +89,7 @@ filter.addEventListener("click", () => {
   regionLists.classList.add("max-lg:block");
 });
 
-("use strict");
+"use strict";
 import { countriesContainer } from "./script.js";
 import { renderCountry } from "./displayCountry.js";
 
@@ -109,7 +125,7 @@ const getCountryData = async country => {
 
 export { getCountryData };
 
-("use strict");
+"use strict";
 import { countriesContainer } from "./script.js";
 // Display countries
 const renderCountry = data => {
