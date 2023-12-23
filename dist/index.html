@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,13 +7,16 @@
   <link rel="shortcut icon" href="/tailwindcss.ico" type="image/x-icon" />
   <link rel="stylesheet" href="output.css" />
   <script src="https://kit.fontawesome.com/ad2580ca3d.js" crossorigin="anonymous"></script>
-  <script defer src="script.js"></script>
+  <script type="module" defer src="script.js"></script>
+  <script type="module" defer src="search.js"></script>
+  <script type="module" defer src="ui.js"></script>
+  <script type="module" defer src="getCountryData.js"></script>
+  <script type="module" defer src="displayCountry.js"></script>
 </head>
-
 <body class="bg-slate-100">
   <!-- Navigation -->
   <nav class="navBar bg-white shadow-md flex justify-between py-5 max-md:py-3">
-    <h2 class="navBar-title text-xl font-bold ml-20 max-md:text-sm ml-10">
+    <h2 class="navBar-title text-xl font-bold ml-20 max-md:text-sm max-md:ml-10">
       <i class="fa-solid fa-globe mr-2 text-2xl max-md:text-lg"></i>
       Where in the world?
     </h2>
@@ -24,7 +26,7 @@
       Filter
       by region</h2>
     <ul
-      class="region-lists navBar-ul flex max-lg:fixed top-16 left-1/2 max-lg:transform max-lg:-translate-x-1/2 text-center max-lg:block z-50 max-lg:hidden">
+      class="region-lists navBar-ul flex max-lg:fixed top-16 left-1/2 max-lg:transform max-lg:-translate-x-1/2 text-center z-50 max-lg:hidden">
       <li
         class="navBar-li mr-2 cursor-pointer max-lg:mr-0 ml-2 max-lg:mt-10 max-lg:mb-5 max-lg:uppercase max-lg:font-bold max-lg:text-2xl"
         id="all">All
@@ -43,7 +45,7 @@
       <li class="navBar-li ml-2 cursor-pointer max-lg:uppercase max-lg:font-bold max-lg:text-2xl" id="oceania">Oceania
       </li>
     </ul>
-    <h2 class="navBar-title text-xl font-bold self-center mr-20 max-md:text-sm mr-10">
+    <h2 class="navBar-title text-xl font-bold self-center mr-20 max-md:text-sm max-md:mr-10">
       REST Countries
     </h2>
   </nav>
@@ -56,5 +58,4 @@
   <div class="country-card flex gap-x-20 gap-y-10 justify-center flex-wrap px-20 pt-10 pb-20 max-md:px-5">
   </div>
 </body>
-
 </html>
