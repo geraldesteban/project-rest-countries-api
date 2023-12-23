@@ -4,11 +4,13 @@
   "description": "Project Rest Countries using REST Countries API",
   "main": "index.js",
   "scripts": {
-    "start": "tailwindcss -i ./input.css -o ./dist/output.css --watch"
+    "start": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "concat ./dist/scripts/script.js ./dist/scripts/search.js ./dist/scripts/ui.js ./dist/scripts/getCountryData.js ./dist/scripts/displayCountry.js -o ./dist/bundle.js"
   },
   "author": "Gerald Esteban",
   "license": "ISC",
   "devDependencies": {
+    "concat": "^1.0.3",
     "tailwindcss": "^3.4.0"
   }
 }

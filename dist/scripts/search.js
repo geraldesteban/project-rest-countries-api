@@ -1,5 +1,10 @@
 "use strict";
-import { searchInput, countriesContainer } from "./script.js";
+import {
+  searchInput,
+  countriesContainer,
+  regions,
+  regionLists,
+} from "./script.js";
 import { getCountryData } from "./getCountryData.js";
 
 // Search countries
@@ -10,4 +15,15 @@ searchInput.addEventListener("input", () => {
   } else {
     countriesContainer.innerHTML = "";
   }
+});
+
+// Remove underline and displayed countries
+searchInput.addEventListener("click", () => {
+  countriesContainer.style.opacity = "0";
+
+  regions.forEach(r => {
+    document
+      .querySelector(`#${r}`)
+      .classList.remove("underline", "underline-offset-8");
+  });
 });

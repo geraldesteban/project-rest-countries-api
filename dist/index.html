@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,22 +14,23 @@
   <script type="module" defer src="scripts/getCountryData.js"></script>
   <script type="module" defer src="scripts/displayCountry.js"></script>
 </head>
+
 <body class="bg-slate-100">
   <!-- Navigation -->
   <nav class="navBar bg-white shadow-md flex justify-between py-5 max-md:py-3">
-    <h2 class="navBar-title text-xl font-bold ml-20 max-md:text-sm max-md:ml-10">
-      <i class="fa-solid fa-globe mr-2 text-2xl max-md:text-lg"></i>
+    <h2 class="navBar-title text-xl font-bold ml-20 max-md:text-sm max-md:ml-10 max-sm:ml-5">
+      <i class="fa-solid fa-globe mr-2 text-2xl max-md:text-lg max-sm:mr-0"></i>
       Where in the world?
     </h2>
     </div>
     <h2
-      class="filter hidden font-bold cursor-pointer max-lg:block max-lg:fixed left-1/2 max-lg:transform max-lg:-translate-x-1/2">
+      class="filter hidden font-bold cursor-pointer max-lg:block max-lg:fixed left-1/2 max-lg:transform max-lg:-translate-x-1/2 max-lg:top-36 max-md:top-32 bg-white px-5 py-1 rounded-md shadow-md">
       Filter
       by region</h2>
     <ul
-      class="region-lists navBar-ul flex max-lg:fixed top-16 left-1/2 max-lg:transform max-lg:-translate-x-1/2 text-center z-50 max-lg:hidden">
+      class="region-lists navBar-ul flex max-lg:fixed top-48 left-1/2 max-lg:transform max-lg:-translate-x-1/2 text-center z-50 max-lg:hidden max-md:top-44">
       <li
-        class="navBar-li mr-2 cursor-pointer max-lg:mr-0 ml-2 max-lg:mt-10 max-lg:mb-5 max-lg:uppercase max-lg:font-bold max-lg:text-2xl"
+        class="navBar-li mr-2 cursor-pointer max-lg:mr-0 ml-2 max-lg:mb-5 max-lg:uppercase max-lg:font-bold max-lg:text-2xl"
         id="all">All
       </li>
       <li class="navBar-li ml-2 mr-2 cursor-pointer max-lg:mb-5 max-lg:uppercase max-lg:font-bold max-lg:text-2xl"
@@ -45,17 +47,18 @@
       <li class="navBar-li ml-2 cursor-pointer max-lg:uppercase max-lg:font-bold max-lg:text-2xl" id="oceania">Oceania
       </li>
     </ul>
-    <h2 class="navBar-title text-xl font-bold self-center mr-20 max-md:text-sm max-md:mr-10">
+    <h2 class="navBar-title text-xl font-bold self-center mr-20 max-md:text-sm max-md:mr-10 max-sm:mr-5">
       REST Countries
     </h2>
   </nav>
   <!-- Search Country -->
-  <div class="search text-center relative pt-10">
+  <div class="search text-center relative pt-10 max-lg:pt-5">
     <input class="search-country font-light outline-none w-96 h-11 pl-5 shadow-md rounded-md max-md:w-64" type="search"
       name="country" id="country-search" placeholder="Search for a country..." />
   </div>
   <!-- Countries -->
-  <div class="country-card flex gap-x-20 gap-y-10 justify-center flex-wrap px-20 pt-10 pb-20 max-md:px-5">
+  <div class="country-card flex gap-x-20 gap-y-10 justify-center flex-wrap px-20 pt-10 pb-20 max-md:px-5 max-lg:mt-5">
   </div>
 </body>
+
 </html>
