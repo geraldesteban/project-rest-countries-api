@@ -4,7 +4,7 @@
   "description": "Project Rest Countries using REST Countries API",
   "main": "index.js",
   "scripts": {
-    "start": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "start": "tailwindcss -i ./input.css -o ./dist/output.css --watch"
   },
   "author": "Gerald Esteban",
   "license": "ISC",
