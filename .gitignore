@@ -1,8 +1,0 @@
-design
-node_modules
-package-lock.json
-README-template.md
-style-guide.md
-.DS_Store
-ph.flag.png
-.gitignore
