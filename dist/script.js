@@ -1,6 +1,6 @@
 "use strict";
-
 const countriesContainer = document.querySelector(".country-card");
+
 const renderCountry = function (data) {
   const html = `
     <article class="country bg-white w-72 rounded-tl-md rounded-tr-md">
@@ -13,6 +13,7 @@ const renderCountry = function (data) {
         </div>
     </article>
     `;
+
   countriesContainer.insertAdjacentHTML("beforeend", html);
   countriesContainer.style.opacity = "1";
 };
@@ -22,9 +23,10 @@ const getCountryDataAll = async function () {
     const resAPI = await fetch(`https://restcountries.com/v3.1/all
     `);
     const resData = await resAPI.json();
+
     resData.forEach(rd => {
       renderCountry(rd);
     });
   } catch (err) {}
 };
-// getCountryDataAll();
+getCountryDataAll();
