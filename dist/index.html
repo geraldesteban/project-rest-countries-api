@@ -13,38 +13,48 @@
 
 <body class="bg-slate-100">
   <!-- Navigation -->
-  <nav class="navBar bg-white shadow-md flex justify-between py-5">
-    <h2 class="navBar-title text-xl font-bold ml-20 ">
+  <nav class="navBar bg-white shadow-md flex justify-between py-5 max-md:py-3">
+    <h2 class="navBar-title text-xl font-bold ml-20 max-md:text-sm ml-10">
+      <i class="fa-solid fa-globe mr-2 text-2xl max-md:text-lg"></i>
       Where in the world?
     </h2>
-    <ul class="navBar-ul flex ">
-      <li class="navBar-li mr-2 cursor-pointer" id="all">All</li>
-      <li class="navBar-li ml-2 mr-2 cursor-pointer" id="africa">Africa</li>
-      <li class="navBar-li ml-2 mr-2 cursor-pointer" id="americas">Americas</li>
-      <li class="navBar-li ml-2 mr-2 cursor-pointer" id="asia">Asia</li>
-      <li class="navBar-li ml-2 mr-2 cursor-pointer" id="europe">Europe</li>
-      <li class="navBar-li ml-2 cursor-pointer" id="oceania">Oceania</li>
+    </div>
+    <h2
+      class="filter hidden font-bold cursor-pointer max-lg:block max-lg:fixed left-1/2 max-lg:transform max-lg:-translate-x-1/2">
+      Filter
+      by region</h2>
+    <ul
+      class="region-lists navBar-ul flex max-lg:fixed top-16 left-1/2 max-lg:transform max-lg:-translate-x-1/2 text-center max-lg:block z-50 max-lg:hidden">
+      <li
+        class="navBar-li mr-2 cursor-pointer max-lg:mr-0 ml-2 max-lg:mt-10 max-lg:mb-5 max-lg:uppercase max-lg:font-bold max-lg:text-2xl"
+        id="all">All
+      </li>
+      <li class="navBar-li ml-2 mr-2 cursor-pointer max-lg:mb-5 max-lg:uppercase max-lg:font-bold max-lg:text-2xl"
+        id="africa">Africa
+      </li>
+      <li class="navBar-li ml-2 mr-2 cursor-pointer max-lg:mb-5 max-lg:uppercase max-lg:font-bold max-lg:text-2xl"
+        id="americas">
+        Americas</li>
+      <li class="navBar-li ml-2 mr-2 cursor-pointer max-lg:mb-5 max-lg:uppercase max-lg:font-bold max-lg:text-2xl"
+        id="asia">Asia</li>
+      <li class="navBar-li ml-2 mr-2 cursor-pointer max-lg:mb-5 max-lg:uppercase max-lg:font-bold max-lg:text-2xl"
+        id="europe">Europe
+      </li>
+      <li class="navBar-li ml-2 cursor-pointer max-lg:uppercase max-lg:font-bold max-lg:text-2xl" id="oceania">Oceania
+      </li>
     </ul>
-    <h2 class="navBar-title text-xl font-bold mr-20 ">
+    <h2 class="navBar-title text-xl font-bold self-center mr-20 max-md:text-sm mr-10">
       REST Countries
     </h2>
   </nav>
   <!-- Search Country -->
   <div class="search text-center relative pt-10">
-    <i class="fa-solid fa-magnifying-glass absolute bottom-4 ml-3"></i>
-    <input class="search-country font-light outline-none w-96 h-11 pl-10 shadow-md rounded-md" type="search"
-      name="country" id="country-search" placeholder="Search for a country..." />
+    <input class="search-country font-light outline-none w-96 h-11 pl-5 shadow-md rounded-md max-md:w-64" type="search"
+      name="country" id="country-search" placeholder="🔍   Search for a country..." />
   </div>
   <!-- Countries -->
-  <div class="country-card flex gap-x-20 gap-y-10 justify-center flex-wrap px-52 pt-10 pb-20">
+  <div class="country-card flex gap-x-20 gap-y-10 justify-center flex-wrap px-20 pt-10 pb-20 max-md:px-5">
   </div>
-  <!-- Footer -->
-  <footer class="fooBar bg-white py-5 text-center">
-    <h2 class="fooBar-code">Code by <a href="https://github.com/geraldesteban" class="font-bold">Gerald
-        Esteban</a>
-    </h2>
-    <h2 class="fooBar-api">API used: <a href="https://restcountries.com/" class="font-bold">REST Countries API</a></h2>
-  </footer>
 </body>
 
 </html>

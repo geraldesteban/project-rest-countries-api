@@ -2,7 +2,7 @@
 // Countries container
 const countriesContainer = document.querySelector(".country-card");
 
-// Regions
+// Regions navigation
 const all = document.querySelector("#all");
 const africa = document.querySelector("#africa");
 const americas = document.querySelector("#americas");
@@ -16,7 +16,7 @@ const regions = ["all", "africa", "americas", "asia", "europe", "oceania"];
 // Search
 const searchInput = document.querySelector(".search-country");
 
-// Regions navigation
+// Regions navigation loop
 regions.forEach(region => {
   const regionLists = document.querySelector(`#${region}`);
   regionLists.addEventListener("click", function () {
@@ -32,7 +32,7 @@ regions.forEach(region => {
 });
 
 // Display countries
-const renderCountry = function (data) {
+const renderCountry = data => {
   const html = `
     <article class="country bg-white w-72 rounded-tl-md rounded-tr-md">
         <img class="country-img w-72 rounded-tl-md rounded-tr-md" src="${
@@ -58,22 +58,48 @@ const renderCountry = function (data) {
 };
 
 // Get country data
-const getCountryData = async function (country) {
+const getCountryData = async country => {
   try {
-    const resAPI = await fetch(`https://restcountries.com/v3.1/${country}
-    `);
+    const resAPI = await fetch(`https://restcountries.com/v3.1/${country}`);
+
+    if (!resAPI.ok) {
+      throw new Error(`HTTP error! Status: ${resAPI.status}`);
+    }
+
     const resData = await resAPI.json();
+
+    if (!Array.isArray(resData)) {
+      throw new Error(`Invalid response data format`);
+    }
 
     countriesContainer.innerHTML = "";
 
-    resData.forEach(rd => {
-      renderCountry(rd);
-    });
-  } catch (err) {}
+    if (resData.length === 0) {
+      countriesContainer.innerHTML = "No matching countries found.";
+    } else {
+      resData.forEach(rd => {
+        renderCountry(rd);
+      });
+    }
+  } catch (err) {
+    countriesContainer.innerHTML =
+      "Error fetching country data. Enter valid country.";
+  }
 };
 
 // Search countries
-searchInput.addEventListener("input", function () {
+searchInput.addEventListener("input", () => {
   const searchValue = searchInput.value;
-  getCountryData(`name/${searchValue}`);
+  if (searchValue !== "") {
+    getCountryData(`name/${searchValue}`);
+  } else {
+    countriesContainer.innerHTML = "";
+  }
+});
+
+const regionLists = document.querySelector(".region-lists");
+const filter = document.querySelector(".filter");
+
+filter.addEventListener("click", () => {
+  regionLists.classList.toggle("max-lg:hidden");
 });
