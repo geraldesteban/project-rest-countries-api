@@ -1,15 +1,54 @@
 "use strict";
+// Countries container
 const countriesContainer = document.querySelector(".country-card");
 
+// Regions
+const all = document.querySelector("#all");
+const africa = document.querySelector("#africa");
+const americas = document.querySelector("#americas");
+const asia = document.querySelector("#asia");
+const europe = document.querySelector("#europe");
+const oceania = document.querySelector("#oceania");
+
+// Regions array
+const regions = ["all", "africa", "americas", "asia", "europe", "oceania"];
+
+// Search
+const searchInput = document.querySelector(".search-country");
+
+// Regions navigation
+regions.forEach(region => {
+  const regionLists = document.querySelector(`#${region}`);
+  regionLists.addEventListener("click", function () {
+    regions.forEach(r => {
+      document
+        .querySelector(`#${r}`)
+        .classList.remove("underline", "underline-offset-8");
+    });
+
+    regionLists.classList.add("underline", "underline-offset-8");
+    getCountryData(region === "all" ? "all" : `region/${region}`);
+  });
+});
+
+// Display countries
 const renderCountry = function (data) {
   const html = `
     <article class="country bg-white w-72 rounded-tl-md rounded-tr-md">
-        <img class="country-img w-72 rounded-tl-md rounded-tr-md" src="${data.flags.png}" />
+        <img class="country-img w-72 rounded-tl-md rounded-tr-md" src="${
+          data.flags.png
+        }" />
         <div class="country-data p-8">
-        <h2 class="country-name text-xl text-center font-bold mb-5">${data.name.common}</h3>
-            <p class="country-population font-bold mb-1">Population: <span class="font-light">${data.population}</span></p>
-            <p class="country-region font-bold mb-1">Region: <span class="font-light">${data.region}</span></p>
-            <p class="country-capital font-bold">Capital: <span class="font-light">${data.capital}</span></p>
+        <h2 class="country-name text-xl text-center font-bold mb-5">${
+          data.name.common
+        }</h3>
+            <p class="country-population font-bold mb-1">Population: <span class="font-light">${data.population.toLocaleString()}</span></p>
+            <p class="country-region font-bold mb-1">Region: <span class="font-light">${
+              data.region
+            }</span></p>
+            <p class="country-capital font-bold">Capital: <span class="font-light">${
+              data.capital
+            }</span></p>
         </div>
     </article>
     `;
@@ -18,15 +57,23 @@ const renderCountry = function (data) {
   countriesContainer.style.opacity = "1";
 };
 
-const getCountryDataAll = async function () {
+// Get country data
+const getCountryData = async function (country) {
   try {
-    const resAPI = await fetch(`https://restcountries.com/v3.1/all
+    const resAPI = await fetch(`https://restcountries.com/v3.1/${country}
     `);
     const resData = await resAPI.json();
+
+    countriesContainer.innerHTML = "";
 
     resData.forEach(rd => {
       renderCountry(rd);
     });
   } catch (err) {}
 };
-getCountryDataAll();
+
+// Search countries
+searchInput.addEventListener("input", function () {
+  const searchValue = searchInput.value;
+  getCountryData(`name/${searchValue}`);
+});

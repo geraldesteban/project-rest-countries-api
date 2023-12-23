@@ -18,15 +18,12 @@
       Where in the world?
     </h2>
     <ul class="navBar-ul flex ">
-      <li class="navBar-li font-bold underline underline-offset-8 mr-2 cursor-pointer">All</li>
-      <li class="navBar-li ml-2 mr-2 cursor-pointer">Africa</li>
-      <li class="navBar-li ml-2 mr-2 cursor-pointer">Asia</li>
-      <li class="navBar-li ml-2 mr-2 cursor-pointer">Central America</li>
-      <li class="navBar-li ml-2 mr-2 cursor-pointer">Europe</li>
-      <li class="navBar-li ml-2 mr-2 cursor-pointer">Middle East</li>
-      <li class="navBar-li ml-2 mr-2 cursor-pointer">North America</li>
-      <li class="navBar-li ml-2 mr-2 cursor-pointer">Pacific</li>
-      <li class="navBar-li ml-2 cursor-pointer">South America</li>
+      <li class="navBar-li mr-2 cursor-pointer" id="all">All</li>
+      <li class="navBar-li ml-2 mr-2 cursor-pointer" id="africa">Africa</li>
+      <li class="navBar-li ml-2 mr-2 cursor-pointer" id="americas">Americas</li>
+      <li class="navBar-li ml-2 mr-2 cursor-pointer" id="asia">Asia</li>
+      <li class="navBar-li ml-2 mr-2 cursor-pointer" id="europe">Europe</li>
+      <li class="navBar-li ml-2 cursor-pointer" id="oceania">Oceania</li>
     </ul>
     <h2 class="navBar-title text-xl font-bold mr-20 ">
       REST Countries
@@ -34,9 +31,9 @@
   </nav>
   <!-- Search Country -->
   <div class="search text-center relative pt-10">
-    <i class="fa-solid fa-magnifying-glass absolute mt-3 ml-3"></i>
-    <input class="search-country outline-none w-96 h-11 pl-10 shadow-md rounded-md" type="search" name="country"
-      id="country-search" placeholder="Search for a country..." />
+    <i class="fa-solid fa-magnifying-glass absolute bottom-4 ml-3"></i>
+    <input class="search-country font-light outline-none w-96 h-11 pl-10 shadow-md rounded-md" type="search"
+      name="country" id="country-search" placeholder="Search for a country..." />
   </div>
   <!-- Countries -->
   <div class="country-card flex gap-x-20 gap-y-10 justify-center flex-wrap px-52 pt-10 pb-20">
