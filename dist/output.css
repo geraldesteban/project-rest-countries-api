@@ -868,6 +868,10 @@ video {
     margin-right: 2.5rem;
   }
 
+  .max-md\:mt-8 {
+    margin-top: 2rem;
+  }
+
   .max-md\:w-64 {
     width: 16rem;
   }

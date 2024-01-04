@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "build": "concat ./dist/scripts/script.js ./dist/scripts/search.js ./dist/scripts/ui.js ./dist/scripts/getCountryData.js ./dist/scripts/displayCountry.js -o ./dist/bundle.js"
+    "build": "concat ./dist/scripts/variables.js ./dist/scripts/search.js ./dist/scripts/ui.js ./dist/scripts/getCountryData.js ./dist/scripts/displayCountry.js -o ./dist/bundle.js"
   },
   "author": "Gerald Esteban",
   "license": "ISC",

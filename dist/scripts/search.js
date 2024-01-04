@@ -1,10 +1,5 @@
 "use strict";
-import {
-  searchInput,
-  countriesContainer,
-  regions,
-  regionLists,
-} from "./script.js";
+import { searchInput, countriesContainer, regions } from "./variables.js";
 import { getCountryData } from "./getCountryData.js";
 
 // Search countries

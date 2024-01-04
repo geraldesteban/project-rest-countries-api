@@ -35,12 +35,7 @@ export {
 };
 
 "use strict";
-import {
-  searchInput,
-  countriesContainer,
-  regions,
-  regionLists,
-} from "./script.js";
+import { searchInput, countriesContainer, regions } from "./variables.js";
 import { getCountryData } from "./getCountryData.js";
 
 // Search countries
@@ -65,7 +60,7 @@ searchInput.addEventListener("click", () => {
 });
 
 "use strict";
-import { regions, regionLists, filter } from "./script.js";
+import { regions, regionLists, filter } from "./variables.js";
 import { getCountryData } from "./getCountryData.js";
 
 // Regions navigation loop
@@ -90,7 +85,7 @@ filter.addEventListener("click", () => {
 });
 
 "use strict";
-import { countriesContainer } from "./script.js";
+import { countriesContainer } from "./variables.js";
 import { renderCountry } from "./displayCountry.js";
 
 // Get country data
@@ -126,7 +121,7 @@ const getCountryData = async country => {
 export { getCountryData };
 
 "use strict";
-import { countriesContainer } from "./script.js";
+import { countriesContainer } from "./variables.js";
 // Display countries
 const renderCountry = data => {
   const html = `

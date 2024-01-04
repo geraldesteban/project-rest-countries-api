@@ -1,5 +1,5 @@
 "use strict";
-import { regions, regionLists, filter } from "./script.js";
+import { regions, regionLists, filter } from "./variables.js";
 import { getCountryData } from "./getCountryData.js";
 
 // Regions navigation loop

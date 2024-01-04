@@ -1,5 +1,5 @@
 "use strict";
-import { countriesContainer } from "./script.js";
+import { countriesContainer } from "./variables.js";
 // Display countries
 const renderCountry = data => {
   const html = `
