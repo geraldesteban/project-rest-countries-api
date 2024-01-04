@@ -8,7 +8,7 @@ Project Countries Website using REST Countries API(https://restcountries.com/).
 
 - HTML
 - Tailwind CSS
-- JavaScript(modules, async, function expression, arrow function)
+- JavaScript(ES6, Modules)
 
 ## Demo link
 
