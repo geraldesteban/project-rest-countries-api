@@ -16,6 +16,9 @@ const regions = ["all", "africa", "americas", "asia", "europe", "oceania"];
 // Search
 const searchInput = document.querySelector(".search-country");
 
+// Reload
+const title = document.querySelectorAll(".navBar-title");
+
 // Mobile Navigation
 const regionLists = document.querySelector(".region-lists");
 const filter = document.querySelector(".filter");
@@ -25,6 +28,7 @@ export {
   countriesContainer,
   regions,
   regionLists,
+  title,
   filter,
   all,
   africa,
@@ -60,7 +64,7 @@ searchInput.addEventListener("click", () => {
 });
 
 "use strict";
-import { regions, regionLists, filter } from "./variables.js";
+import { regions, regionLists, filter, title } from "./variables.js";
 import { getCountryData } from "./getCountryData.js";
 
 // Regions navigation loop
@@ -82,6 +86,13 @@ regions.forEach(region => {
 filter.addEventListener("click", () => {
   regionLists.classList.toggle("max-lg:hidden");
   regionLists.classList.add("max-lg:block");
+});
+
+// Reload page
+title.forEach(titles => {
+  titles.addEventListener("click", () => {
+    location.reload();
+  });
 });
 
 "use strict";

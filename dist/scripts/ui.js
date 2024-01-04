@@ -1,5 +1,5 @@
 "use strict";
-import { regions, regionLists, filter } from "./variables.js";
+import { regions, regionLists, filter, title } from "./variables.js";
 import { getCountryData } from "./getCountryData.js";
 
 // Regions navigation loop
@@ -21,4 +21,11 @@ regions.forEach(region => {
 filter.addEventListener("click", () => {
   regionLists.classList.toggle("max-lg:hidden");
   regionLists.classList.add("max-lg:block");
+});
+
+// Reload page
+title.forEach(titles => {
+  titles.addEventListener("click", () => {
+    location.reload();
+  });
 });

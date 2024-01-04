@@ -16,6 +16,9 @@ const regions = ["all", "africa", "americas", "asia", "europe", "oceania"];
 // Search
 const searchInput = document.querySelector(".search-country");
 
+// Reload
+const title = document.querySelectorAll(".navBar-title");
+
 // Mobile Navigation
 const regionLists = document.querySelector(".region-lists");
 const filter = document.querySelector(".filter");
@@ -25,6 +28,7 @@ export {
   countriesContainer,
   regions,
   regionLists,
+  title,
   filter,
   all,
   africa,
